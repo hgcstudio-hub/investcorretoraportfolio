@@ -40,8 +40,8 @@ export function Footer() {
       </address>
 
       <p className="footer__notice">
-        As coberturas e condições variam conforme seguradora, perfil do cliente e produto contratado.
-        Telefone, e-mail, domínio, CNPJ e SUSEP devem ser validados antes da publicação final.
+        Valores, coberturas, carências, redes credenciadas e condições variam conforme operadora, seguradora,
+        perfil do cliente e produto contratado. Consulte as condições da proposta.
       </p>
     </footer>
   );

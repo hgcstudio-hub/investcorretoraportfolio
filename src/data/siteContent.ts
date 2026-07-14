@@ -16,6 +16,7 @@ import {
   Headphones,
   HeartPulse,
   Home,
+  Hospital,
   PanelsTopLeft,
   Plane,
   Scale,
@@ -27,6 +28,7 @@ import {
   Tractor,
   Truck,
   Umbrella,
+  UserRound,
   UserRoundCheck,
   UsersRound,
   Zap,
@@ -49,13 +51,21 @@ export const brand = {
 };
 
 export const hero = {
-  eyebrow: "Invest Corretora de Seguros",
-  title: "Protegendo o que realmente importa.",
+  eyebrow: "Especialistas em planos de saúde",
+  title: "Sua saúde vem primeiro.",
   subtitle:
-    "Soluções em seguros, consórcios e proteção financeira para você, sua família e sua empresa.",
+    "Planos completos e acessíveis para você, sua família ou sua empresa, com opções a partir de R$ 224,00.",
   body:
-    "Atendimento personalizado, transparente e consultivo para ajudar você a encontrar a proteção ideal em cada fase da vida.",
+    "Há mais de 10 anos, a Invest compara planos, valores e redes credenciadas para encontrar a opção adequada ao seu momento.",
 };
+
+export const quickChoices = [
+  { id: "health", label: "Plano de saúde", detail: "Individual, familiar ou empresarial", icon: Stethoscope },
+  { id: "consortium", label: "Consórcio", detail: "Imóveis, veículos e equipamentos", icon: Coins },
+  { id: "auto", label: "Seguro Auto", detail: "Proteção e assistência para o veículo", icon: Car },
+  { id: "life", label: "Seguro de Vida", detail: "Cuidado para você e sua família", icon: HandHeart },
+  { id: "business", label: "Seguro Empresarial", detail: "Patrimônio, operação e equipe", icon: Building2 },
+];
 
 export const proofPoints = [
   { icon: ShieldCheck, title: "Proteção", text: "para o que você construiu" },
@@ -66,11 +76,30 @@ export const proofPoints = [
 
 export const primarySolutions = [
   {
+    id: "health",
+    category: "Nossa especialidade",
+    title: "Planos de Saúde",
+    image: "/assets/solution-health.webp",
+    imagePosition: "center",
+    highlight: "Planos a partir de R$ 224,00*",
+    description:
+      "Do plano mais completo ao mais acessível, com orientação para escolher valores, coberturas e redes credenciadas.",
+    features: [
+      { id: "individual", title: "Planos individuais", description: "Opções para cuidar da sua saúde em cada fase da vida.", icon: UserRound },
+      { id: "family", title: "Planos familiares", description: "Proteção e cuidado para toda a família.", icon: UsersRound },
+      { id: "corporate", title: "Planos empresariais", description: "Soluções para empresas, sócios e colaboradores.", icon: Building2 },
+      { id: "emergency", title: "Urgência e emergência", description: "Amparo quando não dá para esperar.", icon: Hospital },
+      { id: "appointments", title: "Consultas e exames", description: "Acesso a consultas, exames e terapias conforme o plano.", icon: Stethoscope },
+      { id: "hospital", title: "Internações e cirurgias", description: "Coberturas hospitalares conforme as condições contratadas.", icon: HeartPulse },
+    ],
+  },
+  {
     id: "auto",
     category: "Proteção patrimonial",
     title: "Seguro Automóvel",
     image: "/assets/solution-auto.webp",
     imagePosition: "center",
+    highlight: null,
     description:
       "Proteção completa para o seu veículo e suporte nos imprevistos do dia a dia.",
     features: [
@@ -89,6 +118,7 @@ export const primarySolutions = [
     title: "Seguro de Vida",
     image: "/assets/solution-life.webp",
     imagePosition: "center",
+    highlight: null,
     description:
       "Segurança financeira e cuidado para quem faz parte da sua história.",
     features: [
@@ -106,6 +136,7 @@ export const primarySolutions = [
     title: "Seguro Empresarial",
     image: "/assets/solution-business.webp",
     imagePosition: "center",
+    highlight: null,
     description:
       "Coberturas sob medida para proteger patrimônio, operação e continuidade do negócio.",
     features: [
@@ -123,6 +154,7 @@ export const primarySolutions = [
     title: "Consórcios",
     image: "/assets/solution-consortium.webp",
     imagePosition: "center",
+    highlight: null,
     description:
       "Planejamento para conquistar bens e projetos com organização e flexibilidade.",
     features: [
@@ -140,13 +172,6 @@ export const primarySolutions = [
 ];
 
 export const additionalServices = [
-  {
-    title: "Planos de Saúde",
-    icon: Stethoscope,
-    description:
-      "Mais cuidado, segurança e bem-estar para você, sua família ou sua equipe, com opções adequadas a cada necessidade.",
-    benefits: ["Planos individuais, familiares e empresariais", "Opções sob medida", "Suporte na escolha"],
-  },
   {
     title: "Seguro Residencial",
     icon: Home,
@@ -171,7 +196,7 @@ export const additionalServices = [
 ];
 
 export const trustItems = [
-  { icon: BriefcaseBusiness, title: "+10 anos", text: "de experiência no mercado", numericValue: 10 },
+  { icon: HeartPulse, title: "+10 anos", text: "de experiência em planos de saúde", numericValue: 10 },
   { icon: UserRoundCheck, title: "Atendimento consultivo", text: "personalizado para cada cliente" },
   { icon: Building2, title: "Proteção completa", text: "para pessoas, famílias e empresas" },
   { icon: Handshake, title: "Grandes seguradoras", text: "parcerias para buscar boas soluções" },
@@ -206,4 +231,15 @@ export const processSteps = [
   "Apresentação da cotação",
   "Contratação com orientação",
   "Suporte pós-venda",
+];
+
+export const healthOperators = [
+  { name: "SulAmérica Saúde", logo: "/assets/health-operators/sulamerica.webp" },
+  { name: "Amil", logo: "/assets/health-operators/amil.webp" },
+  { name: "Bradesco Saúde", logo: "/assets/health-operators/bradesco-saude.webp" },
+  { name: "GEAP Saúde", logo: "/assets/health-operators/geap-saude.webp" },
+  { name: "Select Saúde", logo: "/assets/health-operators/select-saude.webp" },
+  { name: "Seguros Unimed", logo: "/assets/health-operators/seguros-unimed.webp" },
+  { name: "Hapvida", logo: "/assets/health-operators/hapvida.webp" },
+  { name: "Humana Saúde", logo: "/assets/health-operators/humana-saude.webp" },
 ];

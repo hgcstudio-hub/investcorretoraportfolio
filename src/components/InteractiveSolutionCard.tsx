@@ -28,7 +28,12 @@ export function InteractiveSolutionCard({ solution }: { solution: Solution }) {
   }, []);
 
   return (
-    <article className="solution-card" ref={cardRef}>
+    <article
+      className={solution.id === "health" ? "solution-card solution-card--featured" : "solution-card"}
+      id={`solucao-${solution.id}`}
+      ref={cardRef}
+      tabIndex={-1}
+    >
       <img
         className="solution-card__image"
         src={solution.image}
@@ -42,6 +47,7 @@ export function InteractiveSolutionCard({ solution }: { solution: Solution }) {
         <div>
           <span className="solution-card__category">{solution.category}</span>
           <h3>{solution.title}</h3>
+          {solution.highlight ? <strong className="solution-card__highlight">{solution.highlight}</strong> : null}
           <p>{solution.description}</p>
         </div>
 
@@ -69,7 +75,6 @@ export function InteractiveSolutionCard({ solution }: { solution: Solution }) {
                   expanded={activeFeatureId === feature.id}
                   onActivate={() => setActiveFeatureId(feature.id)}
                   onDeactivate={() => setActiveFeatureId(null)}
-                  onToggle={() => setActiveFeatureId((current) => (current === feature.id ? null : feature.id))}
                 />
               ))}
             </div>

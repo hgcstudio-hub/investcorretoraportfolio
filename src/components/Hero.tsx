@@ -1,6 +1,6 @@
-import { ArrowRight, MessageCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { contact } from "../config/contact";
-import { brand, hero, proofPoints } from "../data/siteContent";
+import { brand, hero, quickChoices } from "../data/siteContent";
 
 export function Hero() {
   return (
@@ -22,23 +22,32 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="hero__proof" aria-label="Diferenciais">
-          {proofPoints.map((item) => (
-            <div key={item.title}>
-              <item.icon aria-hidden="true" />
-              <strong>{item.title}</strong>
-              <span>{item.text}</span>
-            </div>
-          ))}
-        </div>
+        <p className="hero__price-note">
+          *Valor inicial informado no material comercial. Preço, cobertura, carência e rede variam conforme perfil,
+          modalidade e operadora.
+        </p>
       </div>
 
-      <div className="hero__visual" aria-label="Logo da Invest Corretora de Seguros">
-        <div className="hero__logo-card">
-          <img src={brand.logoDark} alt="Invest Corretora de Seguros" />
-          <div className="hero__seal">
-            <ShieldCheck aria-hidden="true" />
-            <span>Tranquilidade hoje, segurança sempre.</span>
+      <div className="hero__visual">
+        <div className="hero__choice-panel" aria-labelledby="hero-choice-title">
+          <div className="hero__choice-heading">
+            <img src={brand.symbol} alt="" aria-hidden="true" />
+            <div>
+              <span>Encontre sua solução</span>
+              <h2 id="hero-choice-title">O que você quer proteger?</h2>
+            </div>
+          </div>
+          <div className="hero__choices">
+            {quickChoices.map((choice) => (
+              <a key={choice.id} href={`#solucao-${choice.id}`}>
+                <choice.icon aria-hidden="true" />
+                <span>
+                  <strong>{choice.label}</strong>
+                  <small>{choice.detail}</small>
+                </span>
+                <ArrowRight aria-hidden="true" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

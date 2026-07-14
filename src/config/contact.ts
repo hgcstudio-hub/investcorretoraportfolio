@@ -1,9 +1,9 @@
 export const contact = {
   whatsapp: {
-    label: "(98) 98983-80120",
-    href: "https://wa.me/55989898380120?text=Olá,%20quero%20solicitar%20uma%20cotação%20com%20a%20Invest%20Corretora.",
-    source: "material visual anexado",
-    status: "validar antes da publicação",
+    label: "(98) 99100-7515",
+    href: "https://wa.me/5598991007515?text=Olá,%20quero%20solicitar%20uma%20cotação%20com%20a%20Invest%20Corretora.",
+    source: "PDF Invest Corretora enviado em 13/07/2026",
+    status: "confirmado no material mais recente",
   },
   email: {
     label: "luciana.investcorretora@gmail.com",

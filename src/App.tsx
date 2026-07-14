@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { useEffect } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { HealthPartners } from "./components/HealthPartners";
 import { Hero } from "./components/Hero";
 import { InteractiveSolutionCard } from "./components/InteractiveSolutionCard";
 import { ProofStrip } from "./components/ProofStrip";
@@ -46,17 +47,17 @@ export function App() {
           <Reveal>
             <SectionHeader
               eyebrow="Quem somos"
-              title="Experiência próxima. Proteção bem orientada."
-              text="A Invest Corretora de Seguros nasceu com o propósito de oferecer soluções em seguros de forma clara, personalizada e eficiente."
+              title="Experiência especializada. Cuidado bem orientado."
+              text="Há mais de 10 anos, a Invest atua de forma especializada em planos de saúde, consórcios, seguros e previdência privada."
             />
           </Reveal>
 
           <div className="about__grid">
             <Reveal className="about__copy">
               <p>
-                Atuamos com ética, transparência e foco total na proteção do que mais importa para cada cliente.
-                Com mais de 10 anos de experiência no mercado, construímos uma trajetória de confiança e excelência
-                no atendimento personalizado.
+                Nosso compromisso é entender as necessidades reais de cada cliente e oferecer soluções personalizadas,
+                seguras e alinhadas aos seus objetivos de vida e de futuro. Em planos de saúde, comparamos opções,
+                valores e redes credenciadas para orientar cada escolha com clareza.
               </p>
               <div className="about__quote">
                 <span>Mais que um seguro, um compromisso com o futuro.</span>
@@ -83,18 +84,24 @@ export function App() {
           <Reveal>
             <SectionHeader
               eyebrow="Nossas soluções"
-              title="Proteção para cada fase da vida e do negócio."
-              text="Conheça as principais soluções da Invest e encontre a proteção adequada para o seu momento."
+              title="Saúde em primeiro lugar. Proteção para todos os momentos."
+              text="Comece pelos planos de saúde e conheça também as soluções da Invest para patrimônio, família e empresa."
               align="center"
             />
           </Reveal>
           <div className="services__showcase">
             {primarySolutions.map((solution, index) => (
-              <Reveal key={solution.id} delay={index * 80}>
+              <Reveal
+                className={solution.id === "health" ? "services__featured-item" : undefined}
+                key={solution.id}
+                delay={index * 80}
+              >
                 <InteractiveSolutionCard solution={solution} />
               </Reveal>
             ))}
           </div>
+
+          <HealthPartners />
 
           <Reveal className="services__more-heading">
             <span>Outras soluções</span>

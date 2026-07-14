@@ -8,7 +8,6 @@ type FeatureIconButtonProps = {
   expanded: boolean;
   onActivate: () => void;
   onDeactivate: () => void;
-  onToggle: () => void;
 };
 
 export function FeatureIconButton({
@@ -18,7 +17,6 @@ export function FeatureIconButton({
   expanded,
   onActivate,
   onDeactivate,
-  onToggle,
 }: FeatureIconButtonProps) {
   const pointerFocus = useRef(false);
 
@@ -29,7 +27,7 @@ export function FeatureIconButton({
       aria-label={`${title}. ${description}`}
       aria-expanded={expanded}
       onClick={() => {
-        onToggle();
+        onActivate();
         pointerFocus.current = false;
       }}
       onFocus={() => {

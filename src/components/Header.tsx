@@ -20,7 +20,7 @@ export function Header() {
         onClick={() => setOpen((current) => !current)}
       >
         {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        <span className="sr-only">Abrir menu</span>
+        <span className="sr-only">{open ? "Fechar menu" : "Abrir menu"}</span>
       </button>
 
       <nav id="primary-navigation" className={open ? "nav nav--open" : "nav"}>
