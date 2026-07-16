@@ -1249,7 +1249,11 @@ a {
   }
 
   .hero {
-    padding-top: 52px;
+    padding-top: 14px;
+  }
+
+  .hero__visual {
+    order: -1;
   }
 
   .reasons__grid,
